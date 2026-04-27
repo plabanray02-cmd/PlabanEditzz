@@ -15,10 +15,11 @@
 body{
 background:#0b0f1a;
 color:#fff;
-padding-top:80px;
+padding-top:70px;
+overflow-x:hidden;
 }
 
-/* NAV */
+/* NAVBAR */
 nav{
 position:fixed;
 top:0;
@@ -28,7 +29,7 @@ justify-content:space-between;
 align-items:center;
 padding:12px 25px;
 background:rgba(10,15,30,0.8);
-backdrop-filter:blur(12px);
+backdrop-filter:blur(10px);
 z-index:1000;
 }
 
@@ -62,16 +63,24 @@ position:absolute;
 width:100%;
 height:100%;
 object-fit:cover;
-z-index:-1;
-filter:brightness(40%);
+z-index:-2;
 }
 
-.hero h2{
+.overlay{
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.55);
+backdrop-filter:blur(4px);
+z-index:-1;
+}
+
+.hero-content h2{
 font-size:28px;
 line-height:1.4;
 }
 
-.hero p{
+.hero-content p{
 font-size:14px;
 color:#ccc;
 margin-top:10px;
@@ -86,6 +95,11 @@ background:linear-gradient(45deg,#00f0ff,#ff00c8);
 color:white;
 font-size:13px;
 cursor:pointer;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:scale(1.1);
 }
 
 /* SECTION */
@@ -172,22 +186,25 @@ font-size:13px;
 <div>
 <a href="#">Home</a>
 <a href="#services">Services</a>
-<a href="#reels">Reels</a>
 <a href="#contact">Contact</a>
 </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
+
 <video autoplay muted loop playsinline class="bg-video">
 <source src="your-video.mp4" type="video/mp4">
 </video>
 
-<div>
+<div class="overlay"></div>
+
+<div class="hero-content">
 <h2>Cinematic Editing That Feels Premium</h2>
 <p>Professional editing for reels, videos & photos</p>
 <button class="btn" onclick="scrollToContact()">Hire Me</button>
 </div>
+
 </section>
 
 <!-- SERVICES -->
@@ -196,17 +213,42 @@ font-size:13px;
 
 <div class="grid">
 
-<div class="card"><h3>Shoot + Edit</h3><p>Full cinematic production</p><div class="price">₹1500–3000</div></div>
+<div class="card">
+<h3>🎬 Shoot + Edit</h3>
+<p>Complete cinematic production</p>
+<div class="price">₹1500–3000</div>
+</div>
 
-<div class="card"><h3>Cinematic Edit</h3><p>Film style editing</p><div class="price">₹800–2000</div></div>
+<div class="card">
+<h3>🎞️ Cinematic Editing</h3>
+<p>Film style editing</p>
+<div class="price">₹800–2000</div>
+</div>
 
-<div class="card"><h3>Reels Editing</h3><p>Trending short videos</p><div class="price">₹300–800</div></div>
+<div class="card">
+<h3>📱 Reels Editing</h3>
+<p>Trending short videos</p>
+<div class="price">₹300–800</div>
+</div>
 
-<div class="card"><h3>Photo Edit</h3><p>Lightroom style</p><div class="price">₹100–500</div></div>
+<div class="card">
+<h3>📸 Photo Editing</h3>
+<p>Lightroom style edit</p>
+<div class="price">₹100–500</div>
+</div>
 
-<div class="card"><h3>Premium Edit</h3><p>High-end storytelling</p><div class="price">₹2000–5000</div></div>
+<div class="card">
+<h3>💎 Premium Editing</h3>
+<p>High-end storytelling</p>
+<div class="price">₹2000–5000</div>
+</div>
 
 </div>
+
+<p style="margin-top:25px;">
+✅ 100% Trusted • ⚡ Fast Delivery • 🎬 Pro Quality
+</p>
+
 </section>
 
 <!-- WHY CHOOSE -->
@@ -214,34 +256,12 @@ font-size:13px;
 <h2>Why Choose Me</h2>
 
 <div class="grid">
-
 <div class="card"><h3>Fast Delivery</h3><p>Quick turnaround</p></div>
-<div class="card"><h3>Cinematic Quality</h3><p>Pro level editing</p></div>
-<div class="card"><h3>Easy Contact</h3><p>WhatsApp & Instagram</p></div>
-<div class="card"><h3>Trusted</h3><p>100% client focus</p></div>
-
-</div>
-</section>
-
-<!-- REELS -->
-<section id="reels">
-<h2>Reels Preview</h2>
-
-<div class="grid">
-
-<div class="card">
-<video controls width="100%">
-<source src="reel1.mp4" type="video/mp4">
-</video>
+<div class="card"><h3>Cinematic Quality</h3><p>Pro level edit</p></div>
+<div class="card"><h3>Easy Contact</h3><p>WhatsApp support</p></div>
+<div class="card"><h3>Trusted</h3><p>Client priority</p></div>
 </div>
 
-<div class="card">
-<video controls width="100%">
-<source src="reel2.mp4" type="video/mp4">
-</video>
-</div>
-
-</div>
 </section>
 
 <!-- CONTACT -->
