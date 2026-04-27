@@ -7,7 +7,7 @@
 
 <title>Plaban Edits | Cinematic Editor</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
@@ -16,10 +16,9 @@ body{
 background:#0b0f1a;
 color:#fff;
 padding-top:80px;
-overflow-x:hidden;
 }
 
-/* NAVBAR */
+/* NAV */
 nav{
 position:fixed;
 top:0;
@@ -27,22 +26,23 @@ width:100%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px 25px;
+padding:12px 25px;
 background:rgba(10,15,30,0.8);
 backdrop-filter:blur(12px);
 z-index:1000;
-border-bottom:1px solid rgba(255,255,255,0.1);
 }
 
 nav h1{
+font-size:18px;
 background:linear-gradient(45deg,#00f0ff,#ff00c8);
 -webkit-background-clip:text;
 color:transparent;
 }
 
 nav a{
-color:#fff;
+font-size:13px;
 margin-left:15px;
+color:#fff;
 text-decoration:none;
 }
 
@@ -59,8 +59,6 @@ overflow:hidden;
 
 .bg-video{
 position:absolute;
-top:0;
-left:0;
 width:100%;
 height:100%;
 object-fit:cover;
@@ -68,87 +66,100 @@ z-index:-1;
 filter:brightness(40%);
 }
 
-.hero-content h2{
-font-size:38px;
-background:linear-gradient(45deg,#00f0ff,#ff00c8);
--webkit-background-clip:text;
-color:transparent;
+.hero h2{
+font-size:28px;
+line-height:1.4;
 }
 
-.hero-content p{
-margin-top:10px;
+.hero p{
+font-size:14px;
 color:#ccc;
-font-size:15px;
+margin-top:10px;
 }
 
 .btn{
-margin-top:20px;
-padding:12px 25px;
+margin-top:15px;
+padding:10px 20px;
 border:none;
 border-radius:30px;
 background:linear-gradient(45deg,#00f0ff,#ff00c8);
 color:white;
+font-size:13px;
 cursor:pointer;
-box-shadow:0 0 15px #00f0ff;
-transition:0.3s;
 }
-
-.btn:hover{transform:scale(1.1);}
 
 /* SECTION */
-section{padding:70px 20px;text-align:center;}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-margin-top:30px;
+section{
+padding:60px 20px;
+max-width:1100px;
+margin:auto;
 }
 
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+margin-top:25px;
+}
+
+/* CARD */
 .card{
 background:rgba(255,255,255,0.05);
-padding:25px;
-border-radius:15px;
-transition:0.4s;
+padding:18px;
+border-radius:12px;
+transition:0.3s;
 opacity:0;
-transform:translateY(40px);
+transform:translateY(30px);
 }
 
 .card:hover{
-transform:translateY(-10px);
-background:rgba(255,255,255,0.08);
-box-shadow:0 0 25px #00f0ff33;
+transform:translateY(-6px);
+box-shadow:0 0 20px #00f0ff33;
+}
+
+.card h3{
+font-size:15px;
+}
+
+.card p{
+font-size:13px;
+color:#aaa;
+margin-top:5px;
 }
 
 .price{
+font-size:13px;
 color:#00f0ff;
-margin-top:10px;
-font-weight:bold;
-}
-
-/* PORTFOLIO */
-.portfolio p{
-margin-top:15px;
-color:#aaa;
+margin-top:8px;
 }
 
 /* CONTACT */
 .contact a{
 display:block;
-margin-top:10px;
+margin-top:8px;
+font-size:14px;
 color:#00f0ff;
+}
+
+/* FLOAT BUTTON */
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+padding:12px;
+border-radius:50%;
+font-size:18px;
+color:#fff;
 }
 
 /* FOOTER */
 footer{
 background:#111;
-padding:15px;
-}
-
-/* ANIMATION */
-@keyframes fadeUp{
-from{opacity:0;transform:translateY(30px);}
-to{opacity:1;transform:translateY(0);}
+padding:12px;
+text-align:center;
+font-size:13px;
 }
 </style>
 </head>
@@ -161,104 +172,95 @@ to{opacity:1;transform:translateY(0);}
 <div>
 <a href="#">Home</a>
 <a href="#services">Services</a>
-<a href="#portfolio">Work</a>
+<a href="#reels">Reels</a>
 <a href="#contact">Contact</a>
 </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-
 <video autoplay muted loop playsinline class="bg-video">
 <source src="your-video.mp4" type="video/mp4">
 </video>
 
-<div class="hero-content">
-<h2>🎬 Cinematic Editing That Feels Premium</h2>
-<p>I create high-quality cinematic videos, reels & professional edits that make your content stand out.</p>
+<div>
+<h2>Cinematic Editing That Feels Premium</h2>
+<p>Professional editing for reels, videos & photos</p>
 <button class="btn" onclick="scrollToContact()">Hire Me</button>
 </div>
-
 </section>
 
 <!-- SERVICES -->
 <section id="services">
-<h2>🔥 My Services</h2>
+<h2>My Services</h2>
+
+<div class="grid">
+
+<div class="card"><h3>Shoot + Edit</h3><p>Full cinematic production</p><div class="price">₹1500–3000</div></div>
+
+<div class="card"><h3>Cinematic Edit</h3><p>Film style editing</p><div class="price">₹800–2000</div></div>
+
+<div class="card"><h3>Reels Editing</h3><p>Trending short videos</p><div class="price">₹300–800</div></div>
+
+<div class="card"><h3>Photo Edit</h3><p>Lightroom style</p><div class="price">₹100–500</div></div>
+
+<div class="card"><h3>Premium Edit</h3><p>High-end storytelling</p><div class="price">₹2000–5000</div></div>
+
+</div>
+</section>
+
+<!-- WHY CHOOSE -->
+<section>
+<h2>Why Choose Me</h2>
+
+<div class="grid">
+
+<div class="card"><h3>Fast Delivery</h3><p>Quick turnaround</p></div>
+<div class="card"><h3>Cinematic Quality</h3><p>Pro level editing</p></div>
+<div class="card"><h3>Easy Contact</h3><p>WhatsApp & Instagram</p></div>
+<div class="card"><h3>Trusted</h3><p>100% client focus</p></div>
+
+</div>
+</section>
+
+<!-- REELS -->
+<section id="reels">
+<h2>Reels Preview</h2>
 
 <div class="grid">
 
 <div class="card">
-<h3>🎬 Shoot + Edit</h3>
-<p>Complete cinematic production with camera, lighting & editing.</p>
-<div class="price">₹1500 – ₹3000</div>
+<video controls width="100%">
+<source src="reel1.mp4" type="video/mp4">
+</video>
 </div>
 
 <div class="card">
-<h3>🎞️ Cinematic Editing</h3>
-<p>Professional color grading, smooth transitions & film look.</p>
-<div class="price">₹800 – ₹2000</div>
-</div>
-
-<div class="card">
-<h3>📱 Reels Editing</h3>
-<p>Viral Instagram reels, shorts & trending edits.</p>
-<div class="price">₹300 – ₹800</div>
-</div>
-
-<div class="card">
-<h3>📸 Photo Editing</h3>
-<p>Lightroom style premium retouch & color correction.</p>
-<div class="price">₹100 – ₹500</div>
-</div>
-
-<div class="card">
-<h3>💎 Premium Editing</h3>
-<p>High-end storytelling with advanced effects & fast delivery.</p>
-<div class="price">₹2000 – ₹5000</div>
-</div>
-
-<div class="card">
-<h3>⚡ Custom Project</h3>
-<p>Tell your idea and get a custom professional edit.</p>
-<div class="price">DM for price</div>
+<video controls width="100%">
+<source src="reel2.mp4" type="video/mp4">
+</video>
 </div>
 
 </div>
-
-<p style="margin-top:30px;">
-✅ 100% Trusted • ⚡ Fast Delivery • 🎬 Professional Quality
-</p>
-
-</section>
-
-<!-- PORTFOLIO -->
-<section id="portfolio" class="portfolio">
-<h2>🎥 My Work</h2>
-
-<p>High-quality cinematic projects will be showcased here soon.</p>
-
-<button class="btn" onclick="scrollToContact()">Work With Me</button>
-
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="contact">
-<h2>📞 Contact Me</h2>
+<h2>Contact</h2>
 
-<p>Available for freelance projects & collaborations.</p>
-
-<a href="https://wa.me/919332160383" target="_blank">📱 WhatsApp: 9332160383</a>
-<a href="https://instagram.com/6x_alive" target="_blank">📷 Instagram: @6x_alive</a>
+<a href="https://wa.me/919332160383" target="_blank">WhatsApp: 9332160383</a>
+<a href="https://instagram.com/6x_alive" target="_blank">Instagram: @6x_alive</a>
 
 </section>
 
-<!-- FOOTER -->
+<!-- FLOAT BUTTON -->
+<a href="https://wa.me/919332160383" class="whatsapp" target="_blank">💬</a>
+
 <footer>
-<p>© 2026 Plaban Edits | All Rights Reserved</p>
+<p>© 2026 Plaban Edits</p>
 </footer>
 
 <script>
-// SCROLL ANIMATION
 const cards = document.querySelectorAll('.card');
 
 window.addEventListener('scroll', ()=>{
