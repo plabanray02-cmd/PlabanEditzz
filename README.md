@@ -15,8 +15,8 @@
 body{
 background:#0b0f1a;
 color:#fff;
-overflow-x:hidden;
 padding-top:80px;
+overflow-x:hidden;
 }
 
 /* NAVBAR */
@@ -38,39 +38,47 @@ nav h1{
 background:linear-gradient(45deg,#00f0ff,#ff00c8);
 -webkit-background-clip:text;
 color:transparent;
-font-size:20px;
 }
 
 nav a{
 color:#fff;
 margin-left:15px;
 text-decoration:none;
-font-size:14px;
 }
 
 /* HERO */
 .hero{
+position:relative;
 height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
 text-align:center;
-flex-direction:column;
-background:linear-gradient(120deg,#000,#0b0f1a,#000);
-animation:bgMove 10s infinite linear;
+overflow:hidden;
 }
 
-.hero h2{
-font-size:36px;
+.bg-video{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-1;
+filter:brightness(40%);
+}
+
+.hero-content h2{
+font-size:38px;
 background:linear-gradient(45deg,#00f0ff,#ff00c8);
 -webkit-background-clip:text;
 color:transparent;
-animation:fadeUp 1.5s ease;
 }
 
-.hero p{
+.hero-content p{
 margin-top:10px;
-color:#aaa;
+color:#ccc;
+font-size:15px;
 }
 
 .btn{
@@ -81,21 +89,15 @@ border-radius:30px;
 background:linear-gradient(45deg,#00f0ff,#ff00c8);
 color:white;
 cursor:pointer;
-transition:0.3s;
 box-shadow:0 0 15px #00f0ff;
+transition:0.3s;
 }
 
-.btn:hover{
-transform:scale(1.1);
-}
+.btn:hover{transform:scale(1.1);}
 
 /* SECTION */
-section{
-padding:70px 20px;
-text-align:center;
-}
+section{padding:70px 20px;text-align:center;}
 
-/* SERVICES */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -126,7 +128,7 @@ font-weight:bold;
 
 /* PORTFOLIO */
 .portfolio p{
-margin-top:20px;
+margin-top:15px;
 color:#aaa;
 }
 
@@ -141,18 +143,12 @@ color:#00f0ff;
 footer{
 background:#111;
 padding:15px;
-font-size:14px;
 }
 
 /* ANIMATION */
 @keyframes fadeUp{
 from{opacity:0;transform:translateY(30px);}
 to{opacity:1;transform:translateY(0);}
-}
-
-@keyframes bgMove{
-0%{background-position:0%;}
-100%{background-position:100%;}
 }
 </style>
 </head>
@@ -172,9 +168,17 @@ to{opacity:1;transform:translateY(0);}
 
 <!-- HERO -->
 <section class="hero">
+
+<video autoplay muted loop playsinline class="bg-video">
+<source src="your-video.mp4" type="video/mp4">
+</video>
+
+<div class="hero-content">
 <h2>🎬 Cinematic Editing That Feels Premium</h2>
-<p>Creative • Professional • 100% Trusted</p>
+<p>I create high-quality cinematic videos, reels & professional edits that make your content stand out.</p>
 <button class="btn" onclick="scrollToContact()">Hire Me</button>
+</div>
+
 </section>
 
 <!-- SERVICES -->
@@ -185,44 +189,44 @@ to{opacity:1;transform:translateY(0);}
 
 <div class="card">
 <h3>🎬 Shoot + Edit</h3>
-<p>Full cinematic production</p>
+<p>Complete cinematic production with camera, lighting & editing.</p>
 <div class="price">₹1500 – ₹3000</div>
 </div>
 
 <div class="card">
-<h3>🎞️ Cinematic Edit</h3>
-<p>Film look editing</p>
+<h3>🎞️ Cinematic Editing</h3>
+<p>Professional color grading, smooth transitions & film look.</p>
 <div class="price">₹800 – ₹2000</div>
 </div>
 
 <div class="card">
 <h3>📱 Reels Editing</h3>
-<p>Viral short content</p>
+<p>Viral Instagram reels, shorts & trending edits.</p>
 <div class="price">₹300 – ₹800</div>
 </div>
 
 <div class="card">
-<h3>📸 Photo Edit</h3>
-<p>Lightroom style</p>
+<h3>📸 Photo Editing</h3>
+<p>Lightroom style premium retouch & color correction.</p>
 <div class="price">₹100 – ₹500</div>
 </div>
 
 <div class="card">
-<h3>💎 Premium Edit</h3>
-<p>High-end storytelling</p>
+<h3>💎 Premium Editing</h3>
+<p>High-end storytelling with advanced effects & fast delivery.</p>
 <div class="price">₹2000 – ₹5000</div>
 </div>
 
 <div class="card">
 <h3>⚡ Custom Project</h3>
-<p>Custom work</p>
+<p>Tell your idea and get a custom professional edit.</p>
 <div class="price">DM for price</div>
 </div>
 
 </div>
 
 <p style="margin-top:30px;">
-✅ 100% Trusted • ⚡ Fast Delivery • 🎬 Pro Quality
+✅ 100% Trusted • ⚡ Fast Delivery • 🎬 Professional Quality
 </p>
 
 </section>
@@ -239,9 +243,9 @@ to{opacity:1;transform:translateY(0);}
 
 <!-- CONTACT -->
 <section id="contact" class="contact">
-<h2>📞 Contact</h2>
+<h2>📞 Contact Me</h2>
 
-<p>✅ 100% Trusted Service</p>
+<p>Available for freelance projects & collaborations.</p>
 
 <a href="https://wa.me/919332160383" target="_blank">📱 WhatsApp: 9332160383</a>
 <a href="https://instagram.com/6x_alive" target="_blank">📷 Instagram: @6x_alive</a>
@@ -250,11 +254,11 @@ to{opacity:1;transform:translateY(0);}
 
 <!-- FOOTER -->
 <footer>
-<p>© 2026 Plaban Edits</p>
+<p>© 2026 Plaban Edits | All Rights Reserved</p>
 </footer>
 
 <script>
-// scroll animation
+// SCROLL ANIMATION
 const cards = document.querySelectorAll('.card');
 
 window.addEventListener('scroll', ()=>{
